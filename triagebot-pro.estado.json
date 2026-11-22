@@ -1,0 +1,110 @@
+{
+  "F01": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-21 23:26",
+    "ultimo_feedback": ""
+  },
+  "F02": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-21 23:27",
+    "ultimo_feedback": ""
+  },
+  "F03": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-21 23:29",
+    "ultimo_feedback": ""
+  },
+  "F04": {
+    "estado": "hecha",
+    "iteraciones": 2,
+    "fecha": "2026-11-21 23:36",
+    "ultimo_feedback": ""
+  },
+  "F05": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-21 23:38",
+    "ultimo_feedback": ""
+  },
+  "F06": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-21 23:40",
+    "ultimo_feedback": ""
+  },
+  "F07": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-21 23:44",
+    "ultimo_feedback": ""
+  },
+  "F08": {
+    "estado": "hecha",
+    "iteraciones": 5,
+    "fecha": "2026-11-22 07:50",
+    "ultimo_feedback": ""
+  },
+  "F09": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-22 08:01",
+    "ultimo_feedback": ""
+  },
+  "F10": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-22 10:03",
+    "ultimo_feedback": ""
+  },
+  "F11": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-22 08:37",
+    "ultimo_feedback": ""
+  },
+  "F12": {
+    "estado": "hecha",
+    "iteraciones": 2,
+    "fecha": "2026-11-22 08:47",
+    "ultimo_feedback": ""
+  },
+  "F13": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-22 08:52",
+    "ultimo_feedback": ""
+  },
+  "F14": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-22 08:58",
+    "ultimo_feedback": ""
+  },
+  "F15": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-22 09:05",
+    "ultimo_feedback": ""
+  },
+  "F16": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-22 09:14",
+    "ultimo_feedback": ""
+  },
+  "F17": {
+    "estado": "hecha",
+    "iteraciones": 3,
+    "fecha": "2026-11-22 10:59",
+    "ultimo_feedback": ""
+  },
+  "F18": {
+    "estado": "hecha",
+    "iteraciones": 1,
+    "fecha": "2026-11-22 11:03",
+    "ultimo_feedback": ""
+  }
+}
