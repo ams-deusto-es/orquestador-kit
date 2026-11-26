@@ -153,6 +153,8 @@ def preparar_entorno():
         "ANTHROPIC_DEFAULT_SONNET_MODEL": MODELOS_OPENROUTER["sonnet"],
         "ANTHROPIC_DEFAULT_HAIKU_MODEL": MODELOS_OPENROUTER["haiku"],
         "CLAUDE_CODE_SUBAGENT_MODEL": MODELOS_OPENROUTER.get(MODELO_IMPL, MODELO_IMPL),
+        "CLAUDE_CODE_SUBAGENT_MODEL": MODELOS_OPENROUTER.get(MODELO_IMPL, MODELO_IMPL),
+        "ENABLE_CLAUDEAI_MCP_SERVERS": "false",
     })
     return env
 
@@ -174,6 +176,18 @@ class ClaudeNoResponde(RuntimeError):
     """Claude no está disponible (sin sesión, clave mala, sin saldo...): no tiene sentido seguir."""
 
 
+def evento_result(out):
+    """Último evento JSON de tipo "result" en la salida (ignora líneas que no son JSON)."""
+    for linea in reversed(out.splitlines()):
+        try:
+            d = json.loads(linea)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(d, dict) and d.get("type") == "result":
+            return d
+    return None
+
+
 def comprobar_claude(repo, modelo=None):
     """Llamada mínima antes de empezar: si falla, paramos con un mensaje claro."""
     cmd = ["claude", "-p", "Responde solo: OK", "--output-format", "json", "--max-turns", "1"]
@@ -183,9 +197,8 @@ def comprobar_claude(repo, modelo=None):
         code, out = sh(cmd, cwd=repo, timeout=120, env=ENTORNO)
     except FileNotFoundError:
         raise ClaudeNoResponde("No encuentro el comando claude. ¿Está instalado Claude Code y en el PATH?")
-    try:
-        data = json.loads(out.strip().splitlines()[-1])
-    except (json.JSONDecodeError, IndexError):
+    data = evento_result(out)   # no vale la última línea: stderr puede traer avisos detrás del JSON
+    if data is None:
         raise ClaudeNoResponde(f"claude no responde bien (código {code}):\n{out[-1500:]}")
     if data.get("is_error"):
         raise ClaudeNoResponde(f"claude devuelve un error: {data.get('result') or data}")
