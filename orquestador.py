@@ -26,11 +26,11 @@ from datetime import datetime
 from pathlib import Path
 
 # ---------------------------------------------------------------- configuración
-MAX_ITERACIONES = 5          # intentos por funcionalidad antes de marcarla "bloqueada"
+MAX_ITERACIONES = 3          # intentos por funcionalidad antes de marcarla "bloqueada"
 MAX_TURNOS_IMPL = 100        # turnos agénticos por llamada al implementador (subido para funcionalidades grandes)
 MAX_TURNOS_REV = 25          # turnos agénticos por llamada al revisor
 MAX_USD_LLAMADA = 5.0        # tope de gasto por llamada a claude
-MAX_USD_TOTAL = 40.0         # tope de gasto de toda la ejecución
+MAX_USD_TOTAL = 8.0         # tope de gasto de toda la ejecución
 TIMEOUT_LLAMADA = 30 * 60    # segundos
 TIMEOUT_VERIF = 10 * 60      # segundos por comando de verificación
 
@@ -41,7 +41,7 @@ MODELOS_OPENROUTER = {       # alias de Claude Code -> modelo en OpenRouter
     "sonnet": "~anthropic/claude-sonnet-latest",
     "haiku": "~anthropic/claude-haiku-latest",
 }
-MODELO_IMPL = "sonnet"       # "opus", "sonnet" o "haiku"
+MODELO_IMPL = "haiku"       # "opus", "sonnet" o "haiku"
 MODELO_REV = None            # None = el mismo que el implementador
 
 HERRAMIENTAS_BASE_IMPL = ["Read", "Edit", "Write", "Glob", "Grep", "Bash(git status:*)", "Bash(git diff:*)", "Bash(ls:*)"]
